@@ -4,10 +4,6 @@ A web application to manage weddings in one place: clients, wedding details, gue
 
 Built with **Laravel** as an academic project.
 
-## Screenshots
-
-![Dashboard](docs/screenshots/dashboard.png)
-![Weddings list](docs/screenshots/mariages.png)
 
 ## Features
 
