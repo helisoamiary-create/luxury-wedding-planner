@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: radial-gradient(circle at top, #1a1a1a, #000000);
+    color: white;
+}
+
+/* texte doré */
+.gold {
+    color: #D4AF37;
+}
+
+/* effet glow doré */
+.gold-glow {
+    color: #D4AF37;
+    text-shadow:
+        0 0 5px #D4AF37,
+        0 0 10px #D4AF37,
+        0 0 20px #D4AF37;
+}
+
+/* étoiles */
+.stars {
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#D4AF37 1px, transparent 1px);
+    background-size: 60px 60px, 120px 120px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.menu-link{
+display:block;
+padding:10px 10px;
+color:#D4AF37;
+font-size:15px;
+transition:0.3s;
+border-radius:6px;
+}
+
+.menu-link:hover{
+background:#1a1a1a;
+color:white;
+}
+
+.menu-active{
+background:#1f1f1f;
+border-left:4px solid #D4AF37;
+padding-left:10px;
+color:white;
+font-weight:600;
+}
+
+/* Scrollbar personnalisée */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b8962e;
+}
+
+
+/* Bouton */
+.btn-gold{
+background:#D4AF37;
+color:black;
+padding:8px 16px;
+border-radius:6px;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-gold:hover{
+background:#c9a42f;
+}
+
+.btn-danger{
+background:#7a1a1a;
+color:white;
+padding:6px 12px;
+border-radius:6px;
+}
+
+.btn-danger:hover{
+background:#a12222;
+}
+
+.btn-success{
+background:#1f7a4c;
+color:white;
+padding:6px 12px;
+border-radius:6px;
+}
+
+.btn-success:hover{
+background:#2fa368;
+}
+
+.btn-edit{
+background:#2a2a2a;
+color:white;
+padding:4px 10px;
+border-radius:5px;
+}
+
+.btn-edit:hover{
+background:#D4AF37;
+color:black;
+}
+
+.btn-delete{
+background:#7a1a1a;
+color:white;
+padding:4px 10px;
+border-radius:5px;
+}
+
+.btn-delete:hover{
+background:#a12222;
+}
+
+@media print {
+
+    .grid {
+        display: flex !important;
+        gap: 10px;
+    }
+
+    .grid > div {
+        flex: 1;
+    }
+
+    /* cacher sidebar + navbar */
+    aside,
+    header {
+        display: none !important;
+    }
+
+    /* cacher boutons */
+    button,
+    .btn-gold,
+    a {
+        display: none !important;
+    }
+
+    /* enlever marges */
+    body {
+        margin: 0;
+        background: white !important;
+        color: black !important;
+    }
+
+    /* élargir contenu */
+    main {
+        padding: 0 !important;
+    }
+
+    /* enlever couleurs sombres */
+    .bg-\[\#1f1f1f\],
+    .bg-\[\#2a2a2a\] {
+        background: white !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .print-container {
+        width: 100%;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+
+    @page {
+        margin: 20mm;
+    }
+
+    body::after {
+        content: "Page " counter(page);
+        position: fixed;
+        bottom: 10px;
+        right: 20px;
+        font-size: 12px;
+    }
+}
